@@ -1,0 +1,10 @@
+[[dependencies]]
+  branch = "master"
+  name = "github.com/google/go-github"
+
+[[dependencies]]
+  name = "github.com/gorilla/mux"
+
+[[dependencies]]
+  branch = "master"
+  name = "golang.org/x/oauth2"

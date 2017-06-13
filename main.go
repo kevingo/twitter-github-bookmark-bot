@@ -16,10 +16,6 @@ import (
 	"strings"
 )
 
-func HomeHandler(w http.ResponseWriter, req *http.Request) {
-	w.Write([]byte("Hello World!"))
-}
-
 func SaveBookmarkHandler(w http.ResponseWriter, req *http.Request) {
 	body, _ := ioutil.ReadAll(req.Body)
 	raw_body := string(body[:])
@@ -88,7 +84,6 @@ func remove(s []string, key string) []string {
 func main() {
 	fmt.Println("Start server")
 	r := mux.NewRouter()
-	r.HandleFunc("/", HomeHandler).Methods("GET")
 	r.HandleFunc("/save", SaveBookmarkHandler).Methods("POST")
-	http.ListenAndServe(":9999", r)
+	http.ListenAndServe(":"+PORT, r)
 }
